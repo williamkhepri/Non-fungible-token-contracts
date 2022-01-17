@@ -1,2 +1,3 @@
-# Non-fungible-token-contracts
-Non Fungible Token Smart Contracts 
+# ERC721
+> EIP-721: Non-Fungible Token Standard
+
