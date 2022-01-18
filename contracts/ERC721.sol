@@ -8,6 +8,9 @@ pragma solidity ^0.8.0;
 */
 interface ERC721
 {
+/*
+Se emite cuando la propiedad de cualquier NFT cambia por cualquier mecanismo. Éste evento se emite cuando los NFT son creados.
 
+*/
 
 }
