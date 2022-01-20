@@ -52,6 +52,13 @@ bytes calldata _data
 external;
 
 /**
-* @notice Esto funciona de manera idéntica a la otra función con un parámetro de datos adicional, excepto que esto
-*
+* @notice Esta funciona de manera idéntica a la otra función con un parámetro de datos adicional, excepto que esta función 
+* establece los datos a "".
+* @dev Transfiere la propiedad de un NFT de una dirección a otra. Esta función puede cambiarse a pagadero.
+* @param _from El propietario actual del NFT.
+* @param _to El nuevo dueño.
+* @param _tokenId El NFT a transferir.
+* @param _data Datos adicionales sin formato especificado , enviados en la llamada a '_to'.
+*/
+
 }
