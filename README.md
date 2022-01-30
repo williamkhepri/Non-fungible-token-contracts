@@ -30,6 +30,10 @@ También hay simulacros de pruebas que se pueden ver aquí. Estos estan hechos e
   
   Este proyecto se publica como un [módulo nmp](https://www.npmjs.com/package/@nibbstack/erc721). Debes instalarlo utilizando el comando `nmp`:
   
+  `$ nmp install @nibbstack/erc721@2.6.1`
+  
+  ### Source
+  *Este es el método de instalación recomendado si desea mejorar el  proyecto `nibbstack/erc721`
   
  
   
