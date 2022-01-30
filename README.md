@@ -34,9 +34,37 @@ También hay simulacros de pruebas que se pueden ver aquí. Estos estan hechos e
   $ nmp install @nibbstack/erc721@2.6.1
   ```
   
-  ### Source
+  ### Fuente
   *Este es el método de instalación recomendado si desea mejorar el  proyecto `nibbstack/erc721`
   
- 
+  Clone este repositorio e instale las dependencias `nmp` requeridas:
+  
+  ```
+  $ git clone git@github.com:nibbstack/erc721.git
+  $ cd ethereum-erc721
+  $ nmp install
+  ```
+  Asegúrate de que todo se ha configurado correctamente:
+  
+  ```
+  $ nmp run test
+  ```
+  
+  ## Uso
+  
+  ### nmp
+  
+  Para interactuar con los contratos de este paquete dentro del código JavaScript, simplemente necesita solicitar los archivos ``` .json ``` de este paquete:
+  
+  ```js
+  const contract = require("@nibbstack/erc721/abi/NFTokenEnumerable.json");
+  console.log(contract);
+  ```
+  
+  ### Remix IDE (Ethereum only)
+  
+  Puede implementar rápidamente un contrato con esta biblioteca utilizando Remix IDE. Aquí un ejemplo.
+  
+  
   
   
