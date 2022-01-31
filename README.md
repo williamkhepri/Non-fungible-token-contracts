@@ -156,7 +156,7 @@ contract MyArtSale is
   Si tu proyecto depende de ERC-721 o si deseas ayudar a a mejorar la seguridad de este proyecto, puedes recibir una recompensa. Esto significa que se comprometerá a 
   pagar a los a los investigadores que demuestren un problema. Contacta con [bounty@nibbstack.com](mailto:bounty@nibbstack.com) si estás interesado.
   
-  Lee el [programa de recompensas por errores] completo (BUG_BOUNTY.md).
+  Lee el [programa de recompensas por errores](./BUG_BOUNTY.md) completo .
   
   [follow here](https://github.com/nibbstack/erc721)
   
