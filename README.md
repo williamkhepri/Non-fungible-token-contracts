@@ -63,8 +63,15 @@ También hay simulacros de pruebas que se pueden ver aquí. Estos estan hechos e
   
   ### Remix IDE (Ethereum only)
   
-  Puede implementar rápidamente un contrato con esta biblioteca utilizando Remix IDE. Aquí un ejemplo.
+  Puede implementar rápidamente un contrato con esta biblioteca utilizando [Remix IDE](https://remix.ethereum.org/). Aquí hay un ejemplo.
+  
+  Has creado y posees obras de arte únicas de vidrio soplado (cada una con un número de serie/lote) que le gustaría vender utilizando la red principal de Ethereum o 
+  Wanchain. Venderás tokens no fungibles y los compradores podrán intercambiarlos por otras personas. Una ficha por obra de arte. Te comprometes con cualquiera que 
+  tenga estos tokens a que puedan canjearlos y tomar posesión física de la obra.
+  
+  Para ello, simplemente pega el código a continuación en Remix e implementa el contrato inteligente.
+  "Acuñarás" una ficha por cada nueva obra de arte que quieras ver. Luego, "quemarás" esa ficha cuando entregues la posesión física de esa pieza.
   
   
-  
+  [follow here](https://github.com/nibbstack/erc721)
   
