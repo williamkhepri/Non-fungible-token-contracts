@@ -80,7 +80,7 @@ import "https://github.com/nibbstack/erc721/src/contracts/tokens/nf-token-metada
 import "https://github.com/nibbstack/erc721/src/contracts/ownership/ownable.sol";
 
 /**
- * @dev This is an example contract implementation of NFToken with metadata extension.
+ * @dev Este es un ejemplo de implementación de contrato de token NFT con extensión de metadatos.
  */
 contract MyArtSale is
   NFTokenMetadata,
@@ -88,7 +88,7 @@ contract MyArtSale is
 {
 
   /**
-   * @dev Contract constructor. Sets metadata extension `name` and `symbol`.
+   * @dev Constructor del contrato. Establece la sesión de metadatos `nombre` y `símbolo`.
    */
   constructor()
   {
@@ -97,10 +97,10 @@ contract MyArtSale is
   }
 
   /**
-   * @dev Mints a new NFT.
-   * @param _to The address that will own the minted NFT.
-   * @param _tokenId of the NFT to be minted by the msg.sender.
-   * @param _uri String representing RFC 3986 URI.
+   * @dev Acuña un nuevo NFT.
+   * @param _to La dirección que poseerá el NFT acuñado.
+   * @param _tokenId del NFT a ser acuñado por el msg.sender.
+   * @param _uri Cadena que representa RFC 3986 URI.
    */
   function mint(
     address _to,
@@ -116,6 +116,51 @@ contract MyArtSale is
 
 }
   ```
+  * Debes comunicarte con un abogado antes de realizar una subasta o vender cualquier cosa. Específicamente, las leyes para las subastas varían mucho según las 
+  distintas jurisdiscciones. Esta aplicación se proporciona solo como un ejemplo de la tecnología y no es un cosejo legal.*
+  
+  ## Patio de juegos
+  
+  ### Ethereum - red de prubas de Ropsten
+  
+  Ya implementamos algunos contratos en la red [Ropsten](https://ropsten.etherscan.io/). Puedes jugar con ellos AHORA MISMO. No es necesario instalar software. En 
+  esta versión de prueba del contrato, cualquiera puede <mint> o <burn> tokens, así que no lo uses para nada importante.
+  
+
+| Contrato                                                     | Dirección del token | Hash de Transacción |
+| ------------------------------------------------------------ | ------------- | ---------------- |
+| [`nf-token.sol`](src/contracts/tokens/nf-token.sol)          | [0xd8bbf8ceb445de814fb47547436b3cfeecadd4ec](https://ropsten.etherscan.io/address/0xd8bbf8ceb445de814fb47547436b3cfeecadd4ec)          | [0xaac94c9ce15f5e437bd452eb1847a1d03a923730824743e1f37b471db0f16f0c](https://ropsten.etherscan.io/tx/0xaac94c9ce15f5e437bd452eb1847a1d03a923730824743e1f37b471db0f16f0c)             |
+| [`nf-token-metadata.sol`](src/contracts/tokens/nf-token-metadata.sol) | [0x5c007a1d8051dfda60b3692008b9e10731b67fde](https://ropsten.etherscan.io/address/0x5c007a1d8051dfda60b3692008b9e10731b67fde)          | [0x1e702503aff40ea44aa4d77801464fd90a018b7b9bad670500a6e2b3cc281d3f](https://ropsten.etherscan.io/tx/0x1e702503aff40ea44aa4d77801464fd90a018b7b9bad670500a6e2b3cc281d3f)             |
+| [`nf-token-enumerable.sol`](src/contracts/tokens/nf-token-enumerable.sol) | [0x130dc43898eb2a52c9d11043a581ce4414487ed0](https://ropsten.etherscan.io/address/0x130dc43898eb2a52c9d11043a581ce4414487ed0)          | [0x8df4c9b73d43c2b255a4038eec960ca12dae9ba62709894f0d85dc90d3938280](https://ropsten.etherscan.io/tx/0x8df4c9b73d43c2b255a4038eec960ca12dae9ba62709894f0d85dc90d3938280)             |
+  
+  ### Wanchain - testnet
+  
+  Ya hemos implementado algunos contratos en la red [testnet](http://testnet.wanscan.org/). Puedes jugar con ellos AHORA MISMO.No es necesario instalar software. En  
+  esta versión de prueba del contrato, cualquiera puede <mint> o <burn> tokens, así que no los uses para nada importante. 
+  
+  | Contract                                                     | Token address | Transaction hash |
+| ------------------------------------------------------------ | ------------- | ---------------- |
+| [`nf-token.sol`](src/contracts/tokens/nf-token.sol)          | [0x6D0eb4304026116b2A7bff3f46E9D2f320df47D9](http://testnet.wanscan.org/address/0x6D0eb4304026116b2A7bff3f46E9D2f320df47D9)          | [0x9ba7a172a50fc70433e29cfdc4fba51c37d84c8a6766686a9cfb975125196c3d](http://testnet.wanscan.org/tx/0x9ba7a172a50fc70433e29cfdc4fba51c37d84c8a6766686a9cfb975125196c3d)             |
+| [`nf-token-metadata.sol`](src/contracts/tokens/nf-token-metadata.sol) | [0xF0a3852BbFC67ba9936E661fE092C93804bf1c81](http://testnet.wanscan.org/address/0xF0a3852BbFC67ba9936E661fE092C93804bf1c81)          | [0x338ca779405d39c0e0f403b01679b22603c745828211b5b2ea319affbc3e181b](http://testnet.wanscan.org/tx/0x338ca779405d39c0e0f403b01679b22603c745828211b5b2ea319affbc3e181b)             |
+| [`nf-token-enumerable.sol`](src/contracts/tokens/nf-token-enumerable.sol) | [0x539d2CcBDc3Fc5D709b9d0f77CaE6a82e2fec1F3](http://testnet.wanscan.org/address/0x539d2CcBDc3Fc5D709b9d0f77CaE6a82e2fec1F3)          | [0x755886c9a9a53189550be162410b2ae2de6fc62f6791bf38599a078daf265580](http://testnet.wanscan.org/tx/0x755886c9a9a53189550be162410b2ae2de6fc62f6791bf38599a078daf265580)             |
+
+  ### Contribución
+  
+  Consulta [CONTRIBUIR.md](./contributing.md) para saber cómo contribuir.
+  
+  ## Recompensa de errores
+  
+  Usted es alguien que lee la documentación de los contratos inteligentes y comprende cómo funciona la implementación de referencia del token ERC-721. Así que tienes 
+  habilidades únicas y tu tiempo es valioso. Le pagaremos por sus contribuciones a este proyecto en forma de informes de errores.
+  
+  Si tu proyecto depende de ERC-721 o si deseas ayudar a a mejorar la seguridad de este proyecto, puedes recibir una recompensa. Esto significa que se comprometerá a 
+  pagar a los a los investigadores que demuestren un problema. Contacta con [bounty@nibbstack.com](mailto:bounty@nibbstack.com) si estás interesado.
+  
+  Lee el [programa de recompensas por errores] completo (BUG_BOUNTY.md).
   
   [follow here](https://github.com/nibbstack/erc721)
+  
+  ## Licencia
+  
+  Consulta la [LICENCIA](./LICENCIA) para obtener más detalles.
   
