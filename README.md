@@ -118,8 +118,12 @@ contract MyArtSale is
   ```
   * Debes comunicarte con un abogado antes de realizar una subasta o vender cualquier cosa. Específicamente, las leyes para las subastas varían mucho según las 
   distintas jurisdiscciones. Esta aplicación se proporciona solo como un ejemplo de la tecnología y no es un cosejo legal.*
+  ## Validación
   
-  ## Patio de juegos
+  Puedes verificar la validez del contrato inteligente, la corrección de implementación y las funciones admitidas del contrato inteligente respectivo utilizando el 
+  validador en línea: https://erc721validator.org/.
+
+  ## Realización de Pruebas 
   
   ### Ethereum - red de prubas de Ropsten
   
