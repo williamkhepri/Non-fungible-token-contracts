@@ -1,4 +1,4 @@
-# ERC721
+# ERC721 - Implementación de referencia
 > EIP-721: Non-Fungible Token Standard
 
 Esta es la implementación de referencia completa del estándar de token no fungible [ERC-721](https://github-com.translate.goog/ethereum/EIPs/blob/master/EIPS/eip-721.md?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wapp) para las cadenas de bloques Ethereum y Wanchain. También es compatible con otras cadenas compatibles con EVM como Binance Smart Chain (BSC), Avalanche (AVAX), etc. Este es un proyecto de código abierto, completo con pruebas [Hardhat](https://hardhat.org/).
