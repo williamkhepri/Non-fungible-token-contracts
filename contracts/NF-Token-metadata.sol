@@ -98,11 +98,10 @@ contract NFTokenMetadata is
 
   /**
    * @notice Esta es una función interna que debe llamarse desde una función externa implementada por el usuario.
-   * burn function. Its purpose is to show and properly initialize data structures when using this
-   * implementation. Also, note that this burn implementation allows the minter to re-mint a burned
-   * NFT.
-   * @dev Burns a NFT.
-   * @param _tokenId ID of the NFT to be burned.
+   * función de grabación. Su propósito es monstrar e inicializar adecuadamente las estrucuras de datos al usar esta
+   * implementación. Además, tenga en cuenta que esta implementación de quemado le permite al minter volver a acuñar un quemado NFT.
+   * @dev Quema un NFT.
+   * @param _tokenId ID del NFT a grabar.
    */
   function _burn(
     uint256 _tokenId
@@ -117,12 +116,11 @@ contract NFTokenMetadata is
   }
 
   /**
-   * @notice This is an internal function which should be called from user-implemented external
-   * function. Its purpose is to show and properly initialize data structures when using this
-   * implementation.
-   * @dev Set a distinct URI (RFC 3986) for a given NFT ID.
-   * @param _tokenId Id for which we want URI.
-   * @param _uri String representing RFC 3986 URI.
+   * @notice Esta esuna función interna que debe llamarse desde una función externa implementada por el usuario.
+   * Fucnión. Su propósito es mostrar e inicializar adecuadamente las estructuras de datos al usar esta implementación.
+   * @dev Establece un URI distinto (RFC 3986) para un ID de NFT dado.
+   * @param _tokenId Id para el que queremos URI.
+   * @param _uri String que representa RFC 3986 URI.
    */
   function _setTokenUri(
     uint256 _tokenId,
