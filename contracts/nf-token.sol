@@ -32,34 +32,34 @@ contract NFToken is
   string constant IS_OWNER = "003008";
 
   /**
-   * @dev Magic value of a smart contract that can receive NFT.
-   * Equal to: bytes4(keccak256("onERC721Received(address,address,uint256,bytes)")).
+   * @dev Valor mágico de un contrato inteligente que puede recibir NFT.
+   * Igual a: bytes4(keccak256("onERC721Received(address,address,uint256,bytes)")).
    */
   bytes4 internal constant MAGIC_ON_ERC721_RECEIVED = 0x150b7a02;
 
   /**
-   * @dev A mapping from NFT ID to the address that owns it.
+   * @dev Un mapeo del ID de NFT a la dirección que lo posee.
    */
   mapping (uint256 => address) internal idToOwner;
 
   /**
-   * @dev Mapping from NFT ID to approved address.
+   * @dev Mapeo desde el ID de NFT a la dirección autorizada.
    */
   mapping (uint256 => address) internal idToApproval;
 
    /**
-   * @dev Mapping from owner address to count of their tokens.
+   * @dev Mapeo desde la dirección del propietario hasta el recurso de sus tokens.
    */
   mapping (address => uint256) private ownerToNFTokenCount;
 
   /**
-   * @dev Mapping from owner address to mapping of operator addresses.
+   * @dev Mapeo desde la dirección del propietario hasta el mapeo de las direcciones del operador.
    */
   mapping (address => mapping (address => bool)) internal ownerToOperators;
 
   /**
-   * @dev Guarantees that the msg.sender is an owner or operator of the given NFT.
-   * @param _tokenId ID of the NFT to validate.
+   * @dev Garantiza que el remitente del msg es un propietario u operador del NFT dado.
+   * @param _tokenId ID del NFT a validar.
    */
   modifier canOperate(
     uint256 _tokenId
@@ -74,8 +74,8 @@ contract NFToken is
   }
 
   /**
-   * @dev Guarantees that the msg.sender is allowed to transfer NFT.
-   * @param _tokenId ID of the NFT to transfer.
+   * @dev Garantiza que el remitente del mensaje (msg.sender) está autorizado a transferir NFT.
+   * @param _tokenId ID del NFT a transferir.
    */
   modifier canTransfer(
     uint256 _tokenId
@@ -92,8 +92,8 @@ contract NFToken is
   }
 
   /**
-   * @dev Guarantees that _tokenId is a valid Token.
-   * @param _tokenId ID of the NFT to validate.
+   * @dev Garantiza que _tokenId es un token válido.
+   * @param _tokenId ID del NFT a validar.
    */
   modifier validNFToken(
     uint256 _tokenId
@@ -104,7 +104,7 @@ contract NFToken is
   }
 
   /**
-   * @dev Contract constructor.
+   * @dev Constructor del contrato.
    */
   constructor()
   {
@@ -112,18 +112,18 @@ contract NFToken is
   }
 
   /**
-   * @notice Throws unless `msg.sender` is the current owner, an authorized operator, or the
-   * approved address for this NFT. Throws if `_from` is not the current owner. Throws if `_to` is
-   * the zero address. Throws if `_tokenId` is not a valid NFT. When transfer is complete, this
-   * function checks if `_to` is a smart contract (code size > 0). If so, it calls
-   * `onERC721Received` on `_to` and throws if the return value is not
+   * @notice Lanza a menos que un 'msg.sender' sea el propietario actual, un operador
+   * autorizado, o la dirección aprobada para este NFT. Lanza si '_from' no es el propietario actual. Lanza si '_to' es
+   * la dirección cero. Lanza si `_tokenId` no es un NFT válido. Cuando se completa la transferencia, esta
+   * comprueba si `_to` es un smart contract (code size > 0). Si lo es, llama a 
+   * `onERC721Received` on `_to` y lanza si el valor de retorno no es
    * `bytes4(keccak256("onERC721Received(address,uint256,bytes)"))`.
-   * @dev Transfers the ownership of an NFT from one address to another address. This function can
-   * be changed to payable.
-   * @param _from The current owner of the NFT.
-   * @param _to The new owner.
-   * @param _tokenId The NFT to transfer.
-   * @param _data Additional data with no specified format, sent in call to `_to`.
+   * @dev Transfiere la propiedad de un NFT de una dirección a otra dirección. Esta función puede
+   * ser modificada para que sea pagable.
+   * @param _from El propietario actual del NFT.
+   * @param _to El nuevo propietario.
+   * @param _tokenId El NFT a tranferir.
+   * @param _data Datos adicionlaes sin formato especificado, enviados en la llamada a `_to`.
    */
   function safeTransferFrom(
     address _from,
@@ -138,13 +138,13 @@ contract NFToken is
   }
 
   /**
-   * @notice This works identically to the other function with an extra data parameter, except this
-   * function just sets data to "".
-   * @dev Transfers the ownership of an NFT from one address to another address. This function can
-   * be changed to payable.
-   * @param _from The current owner of the NFT.
-   * @param _to The new owner.
-   * @param _tokenId The NFT to transfer.
+   * @notice Esto funciona de forma idéntica a la otra función con un parámetro de datos extra, excepto que esta
+   * envía datos a "".
+   * @dev Transfiere la propiedad de un NFT de una dirección a otra. Esta función puede
+   * cambiarse a pagable.
+   * @param _from El propietario actual del NFT.
+   * @param _to El nuevo propietario.
+   * @param _tokenId El NFT a tranferir.
    */
   function safeTransferFrom(
     address _from,
@@ -158,14 +158,14 @@ contract NFToken is
   }
 
   /**
-   * @notice The caller is responsible to confirm that `_to` is capable of receiving NFTs or else
-   * they may be permanently lost.
-   * @dev Throws unless `msg.sender` is the current owner, an authorized operator, or the approved
-   * address for this NFT. Throws if `_from` is not the current owner. Throws if `_to` is the zero
-   * address. Throws if `_tokenId` is not a valid NFT. This function can be changed to payable.
-   * @param _from The current owner of the NFT.
-   * @param _to The new owner.
-   * @param _tokenId The NFT to transfer.
+   * @notice La persona que llama es responsable de confirmar que '_to' es capaz de recibir NFTs o de lo contrario
+   * pueden perderse permanentemente.
+   * @dev Lanza a menos que `msg.sender` sea el propietario actual, un operador autorizado, o la dirección aprobada
+   * para este NFT. Lanza si `_from` no es el propietario actual. Lanza si `_to` es la dirección cero.
+   * Lanza si `_tokenId` no es un NFT válido. Esta función puede ser modificada para que sea pagable.
+   * @param _from El propietario actual del NFT.
+   * @param _to El nuevo propietario.
+   * @param _tokenId El NFT a transferir.
    */
   function transferFrom(
     address _from,
@@ -185,11 +185,11 @@ contract NFToken is
   }
 
   /**
-   * @notice The zero address indicates there is no approved address. Throws unless `msg.sender` is
-   * the current NFT owner, or an authorized operator of the current owner.
-   * @dev Set or reaffirm the approved address for an NFT. This function can be changed to payable.
-   * @param _approved Address to be approved for the given NFT ID.
-   * @param _tokenId ID of the token to be approved.
+   * @notice La dirección cero indica que no hay ninguna dirección aprobada.
+   * Lanza a menos que 'msg.sender' sea el propietario actual del NFT, o un operador autorizado del propietario actual.
+   * @dev Establece o reafirma la dirección aprobada para un NFT. Esta función puede ser modificada para que sea pagable.
+   * @param _approved Dirección a aprobar para el ID de NFT dado.
+   * @param _tokenId ID del token a aprobar.
    */
   function approve(
     address _approved,
@@ -208,11 +208,11 @@ contract NFToken is
   }
 
   /**
-   * @notice This works even if sender doesn't own any tokens at the time.
-   * @dev Enables or disables approval for a third party ("operator") to manage all of
-   * `msg.sender`'s assets. It also emits the ApprovalForAll event.
-   * @param _operator Address to add to the set of authorized operators.
-   * @param _approved True if the operators is approved, false to revoke approval.
+   * @notice Funciona incluso si el remitente no posee ningún token en ese momento.
+   * @dev Activa o desactiva la aprobación para que un tercero ("operador") gestione todos los
+   * `msg.sender`'s assets. También emite el evento ApprovalForAll.
+   * @param _operator Dirección a añadir al conjunto de operadores autorizados.
+   * @param _approved Verdadero si el operador esta aprobado, falso para revocar la aprobación.
    */
   function setApprovalForAll(
     address _operator,
@@ -226,8 +226,8 @@ contract NFToken is
   }
 
   /**
-   * @dev Returns the number of NFTs owned by `_owner`. NFTs assigned to the zero address are
-   * considered invalid, and this function throws for queries about the zero address.
+   * @dev Devuelve el número de NFTs propiedad de '_owner'. Los NFTs asignados a la dirección cero se consideran inválidos,
+   * and this function throws for queries about the zero address.
    * @param _owner Address for whom to query the balance.
    * @return Balance of _owner.
    */
