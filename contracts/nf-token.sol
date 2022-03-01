@@ -227,9 +227,9 @@ contract NFToken is
 
   /**
    * @dev Devuelve el número de NFTs propiedad de '_owner'. Los NFTs asignados a la dirección cero se consideran inválidos,
-   * and this function throws for queries about the zero address.
-   * @param _owner Address for whom to query the balance.
-   * @return Balance of _owner.
+   * y esta función lanza para consultas sobre la dirección cero.
+   * @param _owner Dirección para la que se va a consultar el saldo.
+   * @return Saldo de _owner.
    */
   function balanceOf(
     address _owner
@@ -244,10 +244,10 @@ contract NFToken is
   }
 
   /**
-   * @dev Returns the address of the owner of the NFT. NFTs assigned to the zero address are
-   * considered invalid, and queries about them do throw.
-   * @param _tokenId The identifier for an NFT.
-   * @return _owner Address of _tokenId owner.
+   * @dev Devuelve la dirección del propietario del NFT. Los NFTs asignados a la dirección cero son
+   * considerados inválidos, y las consultas sobre ellos lanzan.
+   * @param _tokenId El identificador de un NFT.
+   * @return _owner Dirección del propietario del _tokenId.
    */
   function ownerOf(
     uint256 _tokenId
@@ -262,10 +262,10 @@ contract NFToken is
   }
 
   /**
-   * @notice Throws if `_tokenId` is not a valid NFT.
-   * @dev Get the approved address for a single NFT.
-   * @param _tokenId ID of the NFT to query the approval of.
-   * @return Address that _tokenId is approved for.
+   * @notice Lanza si '_tokenId' no es un NFT válido.
+   * @dev Obtiene la dirección aprobada para un solo NFT.
+   * @param _tokenId ID del NFT a consultar la aprobación.
+   * @return Dirección para la que _tokenId está aprobado.
    */
   function getApproved(
     uint256 _tokenId
@@ -280,10 +280,10 @@ contract NFToken is
   }
 
   /**
-   * @dev Checks if `_operator` is an approved operator for `_owner`.
-   * @param _owner The address that owns the NFTs.
-   * @param _operator The address that acts on behalf of the owner.
-   * @return True if approved for all, false otherwise.
+   * @dev Comprueba si '_operator' es un operador aprobado para '_owner'.
+   * @param _owner La direción propietaria de los NFTs.
+   * @param _operator La dirección que actúa en nombre del propietario.
+   * @return True si está aprobado para todos, false en caso contrario.
    */
   function isApprovedForAll(
     address _owner,
@@ -298,10 +298,10 @@ contract NFToken is
   }
 
   /**
-   * @notice Does NO checks.
-   * @dev Actually performs the transfer.
-   * @param _to Address of a new owner.
-   * @param _tokenId The NFT that is being transferred.
+   * @notice No hace ninguna comprobación.
+   * @dev Realiza realmente la transferencia.
+   * @param _to Dirección de un nuevo propietario.
+   * @param _tokenId El NFT que se está transfiriendo.
    */
   function _transfer(
     address _to,
@@ -320,12 +320,11 @@ contract NFToken is
   }
 
   /**
-   * @notice This is an internal function which should be called from user-implemented external
-   * mint function. Its purpose is to show and properly initialize data structures when using this
-   * implementation.
-   * @dev Mints a new NFT.
-   * @param _to The address that will own the minted NFT.
-   * @param _tokenId of the NFT to be minted by the msg.sender.
+   * @notice Esta es una función interna que debe ser llamada desde la función externa de acuñado implementada por el usuario.
+   * Su propósito es mostrar e inicializar adecuadamente las estructuras de datos cuando se utiliza esta implementación.
+   * @dev Acuña un nuevo NFT.
+   * @param _to La dirección que poseerá el NFT acuñado.
+   * @param _tokenId del NFT que será acuñado por el msg.sender.
    */
   function _mint(
     address _to,
@@ -343,12 +342,11 @@ contract NFToken is
   }
 
   /**
-   * @notice This is an internal function which should be called from user-implemented external burn
-   * function. Its purpose is to show and properly initialize data structures when using this
-   * implementation. Also, note that this burn implementation allows the minter to re-mint a burned
-   * NFT.
-   * @dev Burns a NFT.
-   * @param _tokenId ID of the NFT to be burned.
+   * @notice Esta es una función externa que debe ser llamada desde la función 'burn' externa implementada por el usuario.
+   * Su propósito es mostrar e inicializar adecuadamente las estructuras de datos cuando se utiliza esta implementación.
+   * Además, hay que tener en cuenta que esta implementación de la grabación permite que el acuñador vuelva a grabar un NFT quemado.
+   * @dev Quema un NFT.
+   * @param _tokenId ID del NFT que se va a quemar.
    */
   function _burn(
     uint256 _tokenId
@@ -364,10 +362,10 @@ contract NFToken is
   }
 
   /**
-   * @notice Use and override this function with caution. Wrong usage can have serious consequences.
-   * @dev Removes a NFT from owner.
-   * @param _from Address from which we want to remove the NFT.
-   * @param _tokenId Which NFT we want to remove.
+   * @notice Utilice y anule esta función con precaución. Un uso incorrecto puede tener graves consecuencias.
+   * @dev Elimina un NFT del propietario.
+   * @param _from Dirección de la que queremos eliminar el NFT.
+   * @param _tokenId Qué NFT queremos eliminar.
    */
   function _removeNFToken(
     address _from,
@@ -382,10 +380,10 @@ contract NFToken is
   }
 
   /**
-   * @notice Use and override this function with caution. Wrong usage can have serious consequences.
-   * @dev Assigns a new NFT to owner.
-   * @param _to Address to which we want to add the NFT.
-   * @param _tokenId Which NFT we want to add.
+   * @notice Utilice y anule esta función con precaución. Un uso incorrecto podría tener graves consecuencias.
+   * @dev Asigna un nuevo NFT al propietario.
+   * @param _to Dirección a la que queremos añadir el NFT.
+   * @param _tokenId Que NFT queremos añadir.
    */
   function _addNFToken(
     address _to,
@@ -401,10 +399,10 @@ contract NFToken is
   }
 
   /**
-   * @dev Helper function that gets NFT count of owner. This is needed for overriding in enumerable
-   * extension to remove double storage (gas optimization) of owner NFT count.
-   * @param _owner Address for whom to query the count.
-   * @return Number of _owner NFTs.
+   * @dev Función de ayuda que obtiene el recuento de NFT del propietario.
+   * Se necesita para anular en la extensión enumerable para eliminar el doble almacenamiento (optimzación del gas) del recuento NFT del propietario.
+   * @param _owner Dirección para la que se consulta el recuento.
+   * @return Número de NFTs del _owner.
    */
   function _getOwnerNFTCount(
     address _owner
@@ -418,12 +416,13 @@ contract NFToken is
   }
 
   /**
-   * @dev Actually perform the safeTransferFrom.
-   * @param _from The current owner of the NFT.
-   * @param _to The new owner.
-   * @param _tokenId The NFT to transfer.
-   * @param _data Additional data with no specified format, sent in call to `_to`.
+   * @dev Realiza realmente el safeTransferForm.
+   * @param _from El propietario actual del NFT.
+   * @param _to El nuevo propietario.
+   * @param _tokenId El NFT a transferir.
+   * @param _data Datos adicionales sin formato especificado, enviados en la llamada a '_to'.
    */
+   
   function _safeTransferFrom(
     address _from,
     address _to,
@@ -448,8 +447,8 @@ contract NFToken is
   }
 
   /**
-   * @dev Clears the current approval of a given NFT ID.
-   * @param _tokenId ID of the NFT to be transferred.
+   * @dev Borra la aprobación actual de un ID de NFT dado.
+   * @param _tokenId ID del NFT a transferir.
    */
   function _clearApproval(
     uint256 _tokenId
