@@ -11,8 +11,8 @@ Si estás buscando una implmenetación de ERC-721 más rica en funciones y avanz
   
 Todos los contratos y pruebas están en la carpeta [src](#). Hay múltiples implementaciones y puedes seleccionar entre:
 - [`nf-token.sol`](/contracts/nf-token.sol):Esta es la implementación básica del token ERC-721 (con soporte para ERC-165).
-- [`nf-token-metadata.sol`](src/contracts/tokens/nf-token-metadata.sol):Este implementa funciones de metadatos ERC-721 opcionales para el contrato de token. Implementa un nombre de token, un símbolo y un URI distinto que apunta a un archivo de metadatos JSON ERC-721 expuesto publicamente.
-- [`nf-token.enumerable.sol`](src/contracts/tokens/nf-token-enumerable.sol): Este implementa el soporte ERC-721 opcional para la enumeración. Es util si quieres saber la oferta total de tokens, consultar un token por índice, etc.
+- [`nf-token-metadata.sol`](/contracts/nf-token-metadata.sol):Este implementa funciones de metadatos ERC-721 opcionales para el contrato de token. Implementa un nombre de token, un símbolo y un URI distinto que apunta a un archivo de metadatos JSON ERC-721 expuesto publicamente.
+- [`nf-token.enumerable.sol`](/contracts/nf-token-enumerable.sol): Este implementa el soporte ERC-721 opcional para la enumeración. Es util si quieres saber la oferta total de tokens, consultar un token por índice, etc.
   
 Otros archivos en los directorios [token](#) o [utils](#) nombrados `erc*.sol` son interfaces y definen los estándares respectivos.
   
