@@ -162,8 +162,6 @@ contract MyArtSale is
   
   Lee el [programa de recompensas por errores](./BUG_BOUNTY.md) completo .
   
-  [follow here](https://github.com/nibbstack/erc721)
-  
   ## Licencia
   
   Consulta la [LICENCIA](./LICENCIA) para obtener más detalles.
